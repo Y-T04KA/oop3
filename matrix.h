@@ -6,8 +6,9 @@
 class matrix {
 public:
     void make(int s);
+    void make(number[]);
     void show();
-    void findDet();
+    number findDet();
     void transpon();
     void ranking();
 private:

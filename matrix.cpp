@@ -18,6 +18,21 @@ void matrix::make(int s) {//метод когда матрицу вводим н
     isUsed = true;
 };
 
+void matrix::make(number s[]) {
+    size = 3;
+    m.clear();
+    int c = 0;
+    for (size_t i = 0; i < size; ++i) {
+        Row row(size);
+        for (size_t j = 0; j < size; ++j) {
+            row[j] = s[c];
+            c++;
+        }
+        m.push_back(row);
+    }
+    isUsed = true;
+}
+
 void matrix::show() {
     check();
     for (size_t i = 0; i < size; ++i)
@@ -28,7 +43,7 @@ void matrix::show() {
     return;
 }
 
-void matrix::findDet() {
+number matrix::findDet() {
     check();
     cc = m;//на всякий случай, работаем с копией матрицы
     for (int i = 0; i < size; i++) {
@@ -41,13 +56,15 @@ void matrix::findDet() {
         cc[i].swap(cc[k]);//тут должны меняться строки матрицы
         if (i != k) det *= -1;
         det *= cc[i][i];
-        for (int j = i + 1; j < size; j++) cc[i][j] /= cc[i][i];
+        for (int j = i + 1; j < size; j++) 
+            cc[i][j] /= cc[i][i];
         for (int j = 0; j < size; j++)
             if ((j != i))
                 for (k = i + 1; k < size; k++)
                     cc[j][k] -= cc[i][k] * cc[j][i];
     }
-    std::cout << det << std::endl;
+    //std::cout << det << std::endl;
+    return det;
 };
 
 void matrix::transpon() {

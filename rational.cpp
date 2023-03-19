@@ -40,6 +40,10 @@ void TRational::operator/=(TRational c) {
 	TRational t;
 	t.re = re*c.im;
 	t.im = im*c.re;
+	if (t.im == 0) {
+		t.re = 0;
+		t.im = 1;
+	}
 	re = t.re;
 	im = t.im;
 }
