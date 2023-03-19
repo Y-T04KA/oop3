@@ -6,10 +6,10 @@ TInterface::TInterface(QWidget *parent)
 {
     ui.setupUi(this);
     setWindowTitle("Работа номер 3");
-    setFixedSize(600, 500);
+    setFixedSize(400, 300);
 
-    name_a = new QLabel("че-нибудь, похуй уже", this);
-    name_a->setGeometry(10, 10, 160, 25);
+    name_a = new QLabel("Роженко Кирилл, Матвеев Сергей, группа 0375", this);
+    name_a->setGeometry(10, 10, 360, 25);
 
     a_re = new QLineEdit("1", this);
     a_re->setGeometry(20, 40, 30, 25);
@@ -75,17 +75,21 @@ TInterface::TInterface(QWidget *parent)
     i_im->setGeometry(240, 120, 30, 25);
 
     btn_det = new QPushButton("Определитель",this);
-    btn_det->setGeometry(30, 150, 100, 30);
+    btn_det->setGeometry(20, 150, 100, 30);
 
     btn_rank = new QPushButton("Ранг", this);
     btn_rank->setGeometry(130, 150, 50, 30);
+
+    btn_trans = new QPushButton("Транспонирование", this);
+    btn_trans->setGeometry(190, 150, 120, 30);
     
     
     output = new QLabel("", this);
-    output->setGeometry(20, 250, 150, 50);
+    output->setGeometry(20, 200, 250, 70);
 
     connect(btn_det, SIGNAL(pressed()), this, SLOT(print_det()));
     connect(btn_rank, SIGNAL(pressed()), this, SLOT(print_rank()));
+    connect(btn_trans, SIGNAL(pressed()), this, SLOT(print_trans()));
 }
 
 TInterface::~TInterface()
@@ -146,13 +150,22 @@ TInterface::~TInterface()
 void TInterface::print_det() {
     actualize();
     QString s("определитель - ");
-    s << instance.findDet();
+    s += QString().setNum(instance.findDet().re/instance.findDet().im);
     //s += " sample ";
     output->setText(s);//
 }
 
 void TInterface::print_rank() {
     actualize();
+    QString s("ранг - ");
+    s += QString().setNum(instance.ranking());
+    output->setText(s);
+}
+
+void TInterface::print_trans() {
+    actualize();
+    QString s=instance.transpose();
+    output->setText(s);
 }
 
 void TInterface::actualize() {

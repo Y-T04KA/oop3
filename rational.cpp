@@ -31,6 +31,7 @@ void TRational::operator*=(TRational c) {
 	TRational t;
 	t.re = re * c.re;
 	t.im = im * c.im;
+	//t = pretty(t);
 	re = t.re;
 	im = t.im;
 }
@@ -44,6 +45,7 @@ void TRational::operator/=(TRational c) {
 		t.re = 0;
 		t.im = 1;
 	}
+	//t = pretty(t);
 	re = t.re;
 	im = t.im;
 }
@@ -54,6 +56,7 @@ void TRational::operator-=(TRational c) {
 		common = common * (im/c.im);
 	}
 	re = re - common;
+	TRational t(re, c.im);
 }
 
 ostream& operator<<(ostream& os, TRational c) {
@@ -72,3 +75,15 @@ istream& operator>>(istream& is, TRational& c) {
 	is >> c.re >> c.im;
 	return is;
 };
+
+//TRational TRational::pretty(TRational c) {
+//	double ref = c.re / c.im;
+//	for (int chis = 1; chis < c.re; chis++) 
+//		for (int zna = 1; zna < c.im; zna++) {
+//			if ((chis / zna) == ref) {
+//				TRational success(chis,zna);
+//				return success;
+//			}
+//		}
+//	return c;
+//}

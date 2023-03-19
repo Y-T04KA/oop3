@@ -10,7 +10,8 @@ public:
     void show();
     number findDet();
     void transpon();
-    void ranking();
+    QString transpose();
+    int ranking();
 private:
     number det = 1;
     typedef std::vector<std::vector<number>> Matrix;

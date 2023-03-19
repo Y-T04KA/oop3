@@ -18,6 +18,8 @@ public:
     friend ostream& operator<<(ostream&, TRational);
     friend istream& operator>>(istream&, TRational&);
     friend QString& operator<<(QString&, TRational);
+private:
+    //TRational pretty(TRational);
 };
 
 double abs(TRational);

@@ -45,6 +45,7 @@ void matrix::show() {
 
 number matrix::findDet() {
     check();
+    det = 1;
     cc = m;//на всякий случай, работаем с копией матрицы
     for (int i = 0; i < size; i++) {
         int k = i;
@@ -81,7 +82,29 @@ void matrix::transpon() {
     m = cc;
 }
 
-void matrix::ranking() {
+QString matrix::transpose() {
+    cc = m;
+    number cache;
+    for (int i = 0; i < size; i++)
+        for (int j = i; j < size; j++) {
+            cache = cc[i][j];
+            cc[i][j] = cc[j][i];
+            cc[j][i] = cache;
+        }
+    QString bwoah = "";
+    Matrix what = cc;
+    for (size_t i = 0; i < size; ++i)
+    {
+        for (size_t j = 0; j < size; ++j) {
+            bwoah << what[i][j];
+            bwoah += "   "; 
+        }
+        bwoah += "\n";
+    }
+    return bwoah;
+}
+
+int matrix::ranking() {
     check();
     cc = m;
     std::vector<bool> line_used(size);
@@ -100,7 +123,7 @@ void matrix::ranking() {
                         cc[k][p] -= cc[j][p] * cc[k][i];
         }
     }
-    std::cout << "ранг - " << rank << std::endl;
+    return rank;
 }
 
 void matrix::check() {
