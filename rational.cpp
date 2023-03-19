@@ -76,7 +76,7 @@ istream& operator>>(istream& is, TRational& c) {
 	return is;
 };
 
-//TRational TRational::pretty(TRational c) {
+//TRational TRational::pretty(TRational c) {//здесь должен был быть код который делал бы дробь красивой, но заставить его работать не удалось
 //	double ref = c.re / c.im;
 //	for (int chis = 1; chis < c.re; chis++) 
 //		for (int zna = 1; zna < c.im; zna++) {

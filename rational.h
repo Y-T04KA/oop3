@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <qstring.h>
-//несмотря на имя, теперь это будет 
 using namespace std;
 
 

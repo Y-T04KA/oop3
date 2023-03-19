@@ -31,7 +31,7 @@ TInterface::TInterface(QWidget *parent)
     del_c->setGeometry(235, 40, 30, 25);
     c_im = new QLineEdit("1", this);
     c_im->setGeometry(240, 40, 30, 25);
-
+    //мне кажется, есть более цивилизованные способы делать подобное
     d_re = new QLineEdit("1", this);
     d_re->setGeometry(20, 80, 30, 25);
     del_d = new QLabel("/", this);
@@ -150,8 +150,10 @@ TInterface::~TInterface()
 void TInterface::print_det() {
     actualize();
     QString s("определитель - ");
-    s += QString().setNum(instance.findDet().re/instance.findDet().im);
-    //s += " sample ";
+    s << instance.findDet();
+    //s += QString().setNum(instance.findDet().re);
+    //s += "/";
+    //s += QString().setNum(instance.findDet().im);
     output->setText(s);//
 }
 
