@@ -4,7 +4,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    TInterface w;
-    w.show();
+    TInterface w(argc,argv);
     return a.exec();
 }

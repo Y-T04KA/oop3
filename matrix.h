@@ -6,7 +6,7 @@
 class matrix {
 public:
     void make(int s);
-    void make(number[]);
+    void make(std::vector<number>,int);
     void show();
     number findDet();
     void transpon();

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oop3", "oop3.vcxproj", "{3E7CA073-F525-482A-A4C9-F513BF1B7CF8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oop4-client", "..\oop4-client\oop4-client.vcxproj", "{0FDE8BE3-E857-49E6-874F-5A620C8DA7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{3E7CA073-F525-482A-A4C9-F513BF1B7CF8}.Debug|x64.Build.0 = Debug|x64
 		{3E7CA073-F525-482A-A4C9-F513BF1B7CF8}.Release|x64.ActiveCfg = Release|x64
 		{3E7CA073-F525-482A-A4C9-F513BF1B7CF8}.Release|x64.Build.0 = Release|x64
+		{0FDE8BE3-E857-49E6-874F-5A620C8DA7FF}.Debug|x64.ActiveCfg = Debug|x64
+		{0FDE8BE3-E857-49E6-874F-5A620C8DA7FF}.Debug|x64.Build.0 = Debug|x64
+		{0FDE8BE3-E857-49E6-874F-5A620C8DA7FF}.Release|x64.ActiveCfg = Release|x64
+		{0FDE8BE3-E857-49E6-874F-5A620C8DA7FF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

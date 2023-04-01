@@ -18,8 +18,8 @@ void matrix::make(int s) {//метод когда матрицу вводим н
     isUsed = true;
 };
 
-void matrix::make(number s[]) {
-    size = 3;
+void matrix::make(std::vector<number> s,int size) {
+    //size = 3;
     m.clear();
     int c = 0;
     for (size_t i = 0; i < size; ++i) {
