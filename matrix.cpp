@@ -18,8 +18,8 @@ void matrix::make(int s) {//метод когда матрицу вводим н
     isUsed = true;
 };
 
-void matrix::make(std::vector<number> s,int size) {
-    //size = 3;
+void matrix::make(std::vector<number> s,int isize) {
+    size = isize;
     m.clear();
     int c = 0;
     for (size_t i = 0; i < size; ++i) {
@@ -44,7 +44,7 @@ void matrix::show() {
 }
 
 number matrix::findDet() {
-    check();
+    //check();
     det = 1;
     cc = m;//на всякий случай, работаем с копией матрицы
     for (int i = 0; i < size; i++) {

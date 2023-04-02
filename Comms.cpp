@@ -1,4 +1,6 @@
 #include "Comms.h"
+#include <iostream>
+
 
 TComms::TComms(TCommParams& pars, QObject* parent) :QUdpSocket(parent) {
 	params = pars;
@@ -12,6 +14,7 @@ bool TComms::isReady(){
 
 void TComms::send(QByteArray msg) {
 	if (ready) {
+		std::cout << "Writing datagram\n";
 		writeDatagram(msg, params.sHost, params.sPort);
 	}
 }
@@ -21,6 +24,7 @@ void TComms::receive() {
 		quint64 size = pendingDatagramSize();
 		QByteArray msg(size, '\0');
 		readDatagram(msg.data(), size);
+		std::cout << "Got datagram\n";
 		emit received(msg);
 	}
 }
