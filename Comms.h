@@ -4,10 +4,10 @@
 #include <QTNetwork/QHostAddress>
 
 struct TCommParams {
-	QHostAddress rHost;
-	quint16 rPort;
-	QHostAddress sHost;
-	quint16 sPort;
+	QHostAddress rHost{};
+	quint16 rPort{};
+	QHostAddress sHost{};
+	quint16 sPort{};
 };
 
 class TComms : public QUdpSocket

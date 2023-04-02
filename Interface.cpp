@@ -1,5 +1,6 @@
 #include "Interface.h"
 #include <number.h>
+#include <common.h>
 
 TInterface::TInterface(int argc, char* argv[]) : QCoreApplication(argc, argv) {
 	TCommParams pars = { QHostAddress("127.0.0.1"),10000, QHostAddress("127.0.0.1"),10001 };
@@ -35,7 +36,7 @@ void TInterface::receive(QByteArray msg) {//msg should be like [size,mode,(data 
 	case 3:
 		s = instance.transpose();
 		answer += s;
-
+		break;
 	default:
 		break;
 	}
