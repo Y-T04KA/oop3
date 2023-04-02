@@ -66,8 +66,10 @@
     <ClInclude Include="rational.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Comms.h">
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Comms.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
   </ItemGroup>
 </Project>

@@ -97,7 +97,7 @@
     <ResourceCompile Include="oop3.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Comms.h" />
+    <QtMoc Include="Comms.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="number.h" />
     <ClInclude Include="rational.h" />
