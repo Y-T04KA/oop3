@@ -2,19 +2,19 @@
 //файла проекта нет, так как сделано в Visual Studio, он .pro файлы не делает
 #include <qobject.h>
 #include <qcoreapplication.h>
-#include <matrix.h>
+#include <SqMatrix.h>
 #include <Comms.h>
 
-class TInterface : public QCoreApplication
+class TServerInterface : public QCoreApplication
 {
 	Q_OBJECT
 		TComms* comm;
 public:
-	TInterface(int, char**);
+	TServerInterface(int, char**);
 signals:
 
 public slots:
 	void receive(QByteArray);
 private:
-	matrix instance;
+	//SqMatrix instance;
 };

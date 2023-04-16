@@ -90,6 +90,7 @@
     <ClCompile Include="Comms.cpp" />
     <ClCompile Include="rational.cpp" />
     <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="SqMatrix.cpp" />
     <QtRcc Include="TInterface.qrc" />
     <QtUic Include="TInterface.ui" />
     <QtMoc Include="Interface.h" />
@@ -99,6 +100,7 @@
     <ResourceCompile Include="oop3.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SqMatrix.h" />
     <QtMoc Include="Comms.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="matrix.h" />

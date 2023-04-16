@@ -5,6 +5,6 @@
 int main(int argc, char *argv[])
 {
     std::cout << "Server is up\n";
-    TInterface w(argc,argv);
+    TServerInterface w(argc,argv);
     return w.exec();
 }
