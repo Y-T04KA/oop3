@@ -1,9 +1,9 @@
 #include <QtCore/QCoreApplication>
 #include <iostream>
-#include <number.h>
 #include <matrix.h>
 
-baseMatrix::baseMatrix(int rows_, int cols_, std::vector<number> input) {
+template<class number>
+baseMatrix<number>::baseMatrix(int rows_, int cols_, std::vector<number> input) {
     rows = rows_;
     cols = cols_;
     m.clear();
@@ -16,10 +16,10 @@ baseMatrix::baseMatrix(int rows_, int cols_, std::vector<number> input) {
         }
         m.push_back(row);
     }
-    isUsed = true;
 }
 
-QString baseMatrix::transpose() {
+template<class number>
+QString baseMatrix<number>::transpose() {
     Matrix cc = m;
     number cache;
     for (int i = 0; i < rows; i++)
@@ -41,7 +41,8 @@ QString baseMatrix::transpose() {
     return bwoah;
 }
 
-int baseMatrix::ranking() {
+template<class number>
+int baseMatrix<number>::ranking() {
     //check();
     Matrix cc = m;
     int rank = min(rows, cols);

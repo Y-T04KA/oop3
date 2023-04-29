@@ -4,6 +4,8 @@
 #include <qcoreapplication.h>
 #include <SqMatrix.h>
 #include <Comms.h>
+#include "rational.h"
+#include "TComplex.h"
 
 class TServerInterface : public QCoreApplication
 {
@@ -16,5 +18,5 @@ signals:
 public slots:
 	void receive(QByteArray);
 private:
-	//SqMatrix instance;
+	//std::vector 
 };

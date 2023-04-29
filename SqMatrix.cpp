@@ -1,8 +1,9 @@
 #include "SqMatrix.h"
 
-number SqMatrix::findDet() {
+template<class number>
+number SqMatrix<number>::findDet() {
     number det = 1;
-    Matrix cc = m;//на всякий случай, работаем с копией матрицы
+    baseMatrix<number>::template Matrix cc = m;//на всякий случай, работаем с копией матрицы
     for (int i = 0; i < cols; i++) {
         int k = i;
         for (int j = i + 1; j < cols; j++) {
