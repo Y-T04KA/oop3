@@ -15,10 +15,10 @@ void TServerInterface::receive(QByteArray msg) {//msg should be like [size,mode,
 	int batch_size,mode,re,im,t;
 	input = QString(msg);
 	std::cout << "Got message from client\n" << "msg size - " << msg.size() << "\nmessage content - " << input.toStdString() << endl;
-	
 	QStringList splitted = input.split(separator);
 	batch_size = splitted[0].toInt();
 	mode = splitted[1].toInt();
+	//here should be conditional logic
 	std::cout << "batch_size - " << batch_size << "\nmode - " << mode << "\nsplitted size - " << splitted.size() << endl;
 	std::vector<number> data;
 	for (int i = 2; i < 2+batch_size*batch_size*2; i++) {
@@ -33,6 +33,7 @@ void TServerInterface::receive(QByteArray msg) {//msg should be like [size,mode,
 
 	}
 	//instance.make(data, batch_size);
+	//part below, in theory, shouldn't change at all but we'll see
 	SqMatrix instance(batch_size, data);
 	std::cout << "processed data from request\n"<<data.size()<<endl;
 	switch (mode)
