@@ -19,9 +19,6 @@ protected:
     int cols = 3;//for square matrix we need only one dimension to be visible
 private:
     int rows = 3;
-    QString oAdaptor(double);
-    QString oAdaptor(TComplex);
-    QString oAdaptor(TRational);
 };
 
 template<class number>

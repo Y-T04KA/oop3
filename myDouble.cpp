@@ -23,7 +23,8 @@ void myDouble::operator*= (myDouble d) {
 };
 
 void myDouble::operator/= (myDouble d) {
-	value /= d.get();
+	if (d.get() != 0) value /= d.get();
+	else value = 0;
 };
 void myDouble::operator-= (myDouble d) {
 	value -= d.get();
