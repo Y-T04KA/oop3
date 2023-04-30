@@ -46,9 +46,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="rational.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,10 +55,10 @@
     <ClCompile Include="common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SqMatrix.cpp">
+    <ClCompile Include="TComplex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TComplex.cpp">
+    <ClCompile Include="myDouble.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,6 +76,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TComplex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myDouble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

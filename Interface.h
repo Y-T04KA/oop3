@@ -6,6 +6,7 @@
 #include <Comms.h>
 #include "rational.h"
 #include "TComplex.h"
+#include "myDouble.h"
 
 class TServerInterface : public QCoreApplication
 {
