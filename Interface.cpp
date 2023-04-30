@@ -102,3 +102,4 @@ void TServerInterface::receive(QByteArray msg) {//msg should be like [size,mode,
 	answer += s;
 	comm->send(QByteArray().append(answer.toUtf8()));
 }
+

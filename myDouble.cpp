@@ -16,16 +16,17 @@ double abs(myDouble c) {
 }
 
 myDouble myDouble::operator* (myDouble d) {
-	return this->get() * d.get();
+	return value * d.value;
 };
 void myDouble::operator*= (myDouble d) {
-	value *= d.get();
+	value *= d.value;
 };
 
 void myDouble::operator/= (myDouble d) {
-	if (d.get() != 0) value /= d.get();
-	else value = 0;
+	//if (d.value != 0) value /= d.value;
+	//else value = 0;
+	value /= d.value;
 };
 void myDouble::operator-= (myDouble d) {
-	value -= d.get();
+	value -= d.value;
 };

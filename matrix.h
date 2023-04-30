@@ -62,21 +62,21 @@ QString baseMatrix<number>::transpose() {
 
 template<class number>
 int baseMatrix<number>::ranking() {
-    //check();
+    double eps = 0.01;
     Matrix cc = m;
     int rank = min(rows, cols);
     std::vector<bool> line_used(rows);
     for (int i = 0; i < rows; i++) {
         int j;
         for (j = 0; j < cols; j++)
-            if (!line_used[j]) break;
+            if (!line_used[j] && abs(cc[j][i]) > eps) break;
         if (j == cols) --rank;
         else
         {
             line_used[j] = true;
             for (int p = i + 1; p < cols; ++p) cc[j][p] /= cc[j][i];
             for (int k = 0; k < rows; ++k)
-                if (k != j)
+                if ((k != j) && abs(cc[k][i]) > eps)
                     for (int p = i + 1; p < cols; ++p)
                         cc[k][p] -= cc[j][p] * cc[k][i];
         }
