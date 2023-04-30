@@ -136,18 +136,18 @@ void TServerInterface::receive(QByteArray msg) {//msg should be like [size,mode,
 	}
 		break;
 	case 8:{//trans for complex
-		std::vector<TRational> data;
+		std::vector<TComplex> data;
 		for (int i = 2; i < 2 + batch_size * batch_size * 2; i++) {
 			if (i % 2 == 0) {
 				re = splitted.at(i).toInt();
 			}
 			else {
 				im = splitted.at(i).toInt();
-				TRational die(re, im);
+				TComplex die(re, im);
 				data.push_back(die);
 			}
 		}
-		SqMatrix<TRational> sq(batch_size, data);
+		SqMatrix<TComplex> sq(batch_size, data);
 		s = sq.transpose();
 		answer += s;
 	}
